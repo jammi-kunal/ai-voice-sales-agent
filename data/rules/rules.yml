@@ -1,0 +1,47 @@
+version: "3.1"
+
+rules:
+
+- rule: Greeting Route
+  steps:
+    - intent: greet
+    - action: action_greet
+
+- rule: Activate schedule call form
+  condition:
+    - active_loop: null
+  steps:
+    - action: schedule_call_form
+    - active_loop: schedule_call_form
+
+- rule: Deactivate Schedule call form
+  condition:
+    - active_loop: schedule_call_form
+  steps:
+    - action: schedule_call_form
+    - active_loop: null
+    - action: action_submit_schedule_call_form
+
+# - rule: Trigger a response if the user does not speak for 10 seconds
+#   steps:
+#     - intent: EXTERNAL_silence_reminder
+#     - action: 
+
+- rule: Activate Redirection form
+  steps:
+    - intent: not_the_right_person
+    - action: redirection_form
+    - active_loop: redirection_form
+
+- rule: Deactivate Redirection form
+  condition:
+    - active_loop: redirection_form
+  steps:
+    - action: redirection_form
+    - active_loop: null
+    - action: action_submit_redirection_form
+
+- rule: Action Restart
+  steps:
+    - intent: restart
+    - action: action_restart

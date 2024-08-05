@@ -1,0 +1,35 @@
+services:
+  rasa:
+    image: rasa/rasa:3.6.20-full
+    ports:
+      - "5005:5005"
+    volumes:
+      - ./:/app
+    command:
+      - run
+      - --enable-api
+      - --cors
+      - "*"
+      - --debug
+      - --model
+      - models/sales-model.tar.gz
+      - --log-file
+      - out.log
+    depends_on:
+      - duckling
+      - action-server
+
+  action-server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: rasa/rasa-sdk:3.6.2
+    volumes:
+      - ./actions:/app/actions
+    ports:
+      - "5055:5055"
+  
+  duckling:
+    image: rasa/duckling:latest
+    ports:
+      - "8000:8000"

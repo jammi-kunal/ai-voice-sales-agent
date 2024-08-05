@@ -1,0 +1,88 @@
+version: "3.1"
+
+responses:
+
+  utter_greet:
+  - text: "Hey! My name is {bot_name}, I am calling you from Digisparks. If you can spare 60 seconds, I can tell you how I can make your life much easier. Is this {prospect_name}?"
+  - text: "Hi! My name is {bot_name}! I am calling you from Digisparks. Am I speaking with {prospect_name}? Have I caught you at a good time?"
+  - text: "Hey! My name is {bot_name}, I am calling you from Digisparks. Do you have a moment to talk? Is this {prospect_name}?"
+  - text: "Hi, this is {bot_name} from Digisparks. I know you're busy, so I'll be quick. My company automates business through the use of AI enabled voice assistants. Would this be an area of interest to you? Am I speaking with {prospect_name}?"
+  - text: "Hi, this is {bot_name} from Digisparks. I know your time is super valuable so I'll be quick. My company automates business through the use of AI enabled voice assistants. The purpose of this call is to understand if you would be interested to talk more on this. Is this {prospect_name}?"
+  - text: "Hello! {bot_name} here from Digisparks. Can we take a minute to discuss how our AI solutions can streamline your business? Is this {prospect_name}?"
+  - text: "Good day! This is {bot_name} calling from Digisparks. Do you have a moment to hear about how we can simplify your business processes? Is this {prospect_name}?"
+  - text: "Hi there! {bot_name} from Digisparks here. Can I have a few minutes to explain how our AI-powered tools can benefit your business? Is this {prospect_name}?"
+  - text: "Hello! {bot_name} from Digisparks calling. I promise to keep it brief. Could we talk for a minute about how our AI solutions can help your business? Is this {prospect_name}?"
+  - text: "Hi! {bot_name} from Digisparks. Just a quick call to introduce how our AI voice assistants can make your operations smoother. Is this a good time? Is this {prospect_name}?"
+  - text: "Hey! This is {bot_name} from Digisparks. Can I take a moment to tell you about our AI solutions that can optimize your workflow? Is this {prospect_name}?"
+  - text: "Hello! {bot_name} from Digisparks here. I'd love to share how our AI voice assistants can enhance your business efficiency. Do you have a minute? Is this {prospect_name}?"
+  - text: "This is {bot_name} calling from Digisparks. Can we quickly chat about how our AI services can boost your business productivity? Is this {prospect_name}?"
+  - text: "Hi! This is {bot_name} from Digisparks. If you have a minute, I'd like to discuss how our AI tools can make your business operations more efficient. Is this {prospect_name}?"
+  - text: "Hello! {bot_name} here from Digisparks. I'm calling to see if you have a moment to talk about how our AI voice assistants can benefit your business. Is this {prospect_name}?"
+  - text: "Hi! This is {bot_name} from Digisparks. I know your time is precious, so I'll be brief. Can we discuss how our AI solutions can streamline your business? Is this {prospect_name}?"
+  - text: "Hey! {bot_name} from Digisparks here. Can we take a quick minute to talk about how our AI-enabled voice assistants can help your business? Is this {prospect_name}?"
+  - text: "Hello! This is {bot_name} from Digisparks. Just a quick call to explore how our AI services can enhance your business operations. Is this a good time? Is this {prospect_name}?"
+  - text: "Hi there! {bot_name} from Digisparks calling. If you can spare a moment, I'd love to tell you how our AI solutions can make your life easier. Is this {prospect_name}?"
+  - text: "Hi! This is {bot_name} from Digisparks. Can I take a quick minute to discuss how our AI-powered tools can optimize your business processes? Is this {prospect_name}?"
+
+  utter_explain:
+  - text: "Great! We provide voice assistants that can work in various aspects of your business, including customer service, sales, HR, vendor management. Our voice assistants can cold call your leads, act as your brand's customer service reps, interact with your vendors and even conduct the first round of screening interviews. Our AI model can be trained and deployed in your company's cloud environment in a matter of 2 hours and the best part is.....it integrates with your CRM. I know you might have questions like 'How much does your solution cost? Will it be affordable for me, Will my data be safe with it? Can I work 24x7 for me?' Let me tell you this, it will work day, night, noon whatever shift you want it to work on! Add the data is end to end encrypted and the software will be hosted on your platform so nobody is touching your data. And I can guarantee that after a month of implementation you'll tell me how much costs have you saved! How does this sound?"
+  - text: "Great! We offer advanced voice assistants designed to enhance various aspects of your business, from customer service and sales to HR and vendor management. Our voice assistants can seamlessly cold call your leads, represent your brand in customer service interactions, communicate with vendors, and even conduct initial screening interviews. The standout feature? Our AI models can be trained and deployed in your company's cloud environment in just two hours. Plus, our solution integrates smoothly with your CRM. You might be wondering about costs, affordability, data security, and availability. Here's the best part: our voice assistants work around the clock—day, night, or any shift you require. Your data's security is our priority, with end-to-end encryption and hosting on your platform, ensuring total control and privacy. And after a month of implementation, you'll likely be thrilled with the cost savings! How does this sound to you?"
+  - text: "Great! We specialize in providing voice assistants that can revolutionize your business operations. Whether it's customer service, sales, HR, or vendor management, our voice assistants have you covered. They can cold call leads, handle customer service tasks, interact with vendors, and even conduct first-round interviews. Our AI models can be up and running in your cloud environment in just two hours and integrate perfectly with your CRM. Now, I'm sure you have questions like: 'How much will this cost? Will it fit my budget? Is my data secure? Can it operate 24/7?' Rest assured, our solution is not only affordable but also incredibly efficient. It can operate anytime you need, with end-to-end encrypted data hosted on your platform, ensuring complete security. I'm confident that within a month, you'll see significant cost savings. What do you think?"
+
+  utter_schedule_call:
+  - text: "Yes, but we all know how easy it is to get lost under a pile of emails. How about I schedule a demo call with you so you can look at our assistants more closely? I will get my human too on that call, what do you say?"
+
+  utter_request_demo_call:
+  - text: "Tell you what, let me address your questions over a demo call at a date when you can spare 20 minutes where I will show you a closer look of our voice assistant. how does that sound?"
+
+  utter_insist_demo_call:
+  - text: "Sure, I would be happy to help but it will be much better if you spare 10 mins to get a deeper look at our voice assistants during the demo before we proceed to clear your doubts. And I will get my cofounder there too, dont worry!"
+
+  utter_ask_availability:
+  - text: "Okay! What time and day are you available?"
+
+  utter_confirm_meeting_details:
+  - text: "So, from what you have told me, I will schedule a meeting for {meeting_date} at {meeting_time}? Is that okay?"
+
+  utter_schedule_call_thank_you:
+  - text: "Awesome, let me send you an invite for {meeting_date} at {meeting_time}! It's been lovely speaking to you. I have also sent you an email detailing out our features. Bye, {prospect_name}! Have a great day ahead."
+
+  utter_swear_words:
+  - text: "I apologize if I'm causing any frustration. However, our voice assistants are here to help you manage your tasks more efficiently driving up productivity by 30% and reducing costs by more than 25% Would you like to learn more about their capabilities? I understand that you might be frustrated, but let's keep our conversation respectful. I'm sorry if I'm bothering you. Our voice assistants are designed to make your life easier by automating tasks and providing real-time information. Would you like to know more about how they can benefit your business?"
+
+  utter_ask_if_robot:
+  - text: "Yes, I am an AI-powered assistant called {bot_name} from Digisparks. My purpose is to assist you with information about our AI solutions."
+  - text: "I am {bot_name}, an AI assistant from Digisparks. I'm here to provide information about our AI solutions."
+  - text: "Indeed, I'm {bot_name}, an AI assistant representing Digisparks. My role is to discuss how our AI solutions can benefit your business."
+  - text: "That's correct, I'm {bot_name}, a virtual assistant developed by Digisparks. I'm here to talk about our AI solutions."
+  - text: "Yes, I am {bot_name} from Digisparks. My function is to inform you about our AI voice assistants and how they can streamline your business processes."
+  - text: "Correct, I'm {bot_name} calling from Digisparks. My purpose is to introduce our AI-powered tools that can optimize your business operations."
+  - text: "Absolutely, I'm {bot_name}, an AI assistant designed by Digisparks. I'm here to discuss our AI solutions and how they can enhance your business efficiency."
+  - text: "Yes, I'm {bot_name} from Digisparks. I specialize in AI solutions that can benefit your business."
+  - text: "That's right, I'm {bot_name}, an AI assistant representing Digisparks. My role is to explain how our AI tools can benefit your business."
+  - text: "Yes, I'm {bot_name} calling from Digisparks. My focus is on discussing how our AI-enabled voice assistants can help your business."
+
+  utter_speak_to_human:
+  - text: "OK, if you would like to speak to my human partner, do let me know a day and time which works best for you and we would do a demo call for you"
+
+  utter_user_busy:
+  - text: "I totally understand. Our tools can actually save you time by automating repetitive tasks, helping you focus on what matters most. How about we set up a quick demo to show you? I know your time is valuable and trust me when I tell you this is pretty groundbreaking, so how about a demo at a time convenient to you then, what do you say?"
+
+  utter_not_interested:
+  - text: "I totally understand. Our tools can actually save you time by automating repetitive tasks, helping you focus on what matters most. How about we set up a quick demo to show you? I know your time is valuable and trust me when I tell you this is pretty groundbreaking, so how about a demo at a time convenient to you then, what do you say?"
+
+  utter_not_the_right_person:
+  - text: "Sure, could you share their email id and phone no, so I can touch base with them? If you say 'Yes' to this, then I would send you a form in which you could fill in the information of the Point of Contact."
+
+  utter_prospect_email:
+  - text: "What would be their Email-id?"
+
+  utter_prospect_phno:
+  - text: "What would be their phone number?"
+
+  utter_redirection_form_yes_response:
+  - text: "Thanks, I will speak to them"
+
+  utter_redirection_form_no_response:
+  - text: "No worries, I respect your decision. Thanks for your time."
+
