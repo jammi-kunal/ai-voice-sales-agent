@@ -1,0 +1,6 @@
+PROSPECT_NAME = "prospect_name"
+BOT_NAME = "Dee"
+MEETING_DATE = "meeting_date"
+MEETING_TIME = "meeting_time"
+DENY = "deny"
+NOT_THE_RIGHT_PERSON = "not_the_right_person"

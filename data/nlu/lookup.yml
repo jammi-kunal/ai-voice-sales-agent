@@ -1,0 +1,61 @@
+version: "3.1"
+
+nlu:
+  - lookup: swear_words
+    examples: |
+      - arsehole
+      - asshat
+      - asshole
+      - bastard
+      - big black cock
+      - bitch
+      - bloody
+      - blowjob
+      - bugger
+      - bullshit
+      - chicken shit
+      - clusterfuck
+      - cock
+      - cocksucker
+      - coonass
+      - cornhole
+      - cracker
+      - cunt
+      - damn
+      - dick
+      - enshittification
+      - faggot
+      - feck
+      - fuck
+      - fuck her right in the pussy
+      - fuck Joe Biden
+      - fuck, marry, kill
+      - fuckery
+      - grab 'em by the pussy
+      - healslut
+      - Jesus fucking christ
+      - kike
+      - motherfucker
+      - nigga
+      - nigger
+      - paki
+      - poof
+      - poofter
+      - prick
+      - pussy
+      - ratfucking
+      - Russian warship, go fuck yourself
+      - shit
+      - shit happens
+      - shithouse
+      - shitposting
+      - shitter
+      - shut the fuck up
+      - shut the hell up
+      - slut
+      - son of a bitch
+      - spic
+      - taking the piss
+      - twat
+      - wanker
+      - whore

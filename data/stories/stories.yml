@@ -1,0 +1,175 @@
+version: "3.1"
+
+stories:
+
+- story: greet negative path
+  steps:
+  - intent: greet
+  - action: action_greet
+  - or:
+    - intent: deny
+    - intent: swear_words
+    - intent: ask_if_robot
+    - intent: speak_to_human
+    - intent: user_busy
+    - intent: not_interested
+  - action: action_negative_intent_router
+
+- story: request email positive path
+  steps:
+  - intent: greet
+  - action: action_greet
+  - intent: affirm
+  - action: action_explain
+  - or:
+    - intent: deny
+    - intent: swear_words
+    - intent: ask_if_robot
+    - intent: speak_to_human
+    - intent: user_busy
+    - intent: not_interested
+  - action: action_negative_intent_router
+
+- story: request email negative path
+  steps:
+  - intent: greet
+  - action: action_greet
+  - intent: affirm
+  - action: action_explain
+  - intent: positive_request_email
+  - action: utter_schedule_call
+  - or:
+    - intent: deny
+    - intent: swear_words
+    - intent: ask_if_robot
+    - intent: speak_to_human
+    - intent: user_busy
+    - intent: not_interested
+  - action: action_negative_intent_router
+
+- story: request email positive path
+  steps:
+  - intent: greet
+  - action: action_greet
+  - intent: affirm
+  - action: action_explain
+  - intent: positive_request_email
+  - action: utter_schedule_call
+  - intent: affirm
+  - action: schedule_call_form
+  - active_loop: schedule_call_form
+  - active_loop: null
+  - action: action_submit_schedule_call_form
+
+- story: explain negative path
+  steps:
+  - intent: greet
+  - action: action_greet
+  - intent: affirm
+  - action: action_explain
+  - or:
+    - intent: deny
+    - intent: swear_words
+    - intent: ask_if_robot
+    - intent: speak_to_human
+    - intent: user_busy
+    - intent: not_interested
+  - action: action_negative_intent_router
+
+- story: request demo positive path
+  steps:
+  - intent: greet
+  - action: action_greet
+  - intent: affirm
+  - action: action_explain
+  - intent: positive_request_demo
+  - action: schedule_call_form
+  - active_loop: schedule_call_form
+  - active_loop: null
+  - action: action_submit_schedule_call_form
+
+- story: faq positive path
+  steps:
+  - intent: greet
+  - action: action_greet
+  - intent: affirm
+  - action: action_explain
+  - intent: faq
+  - action: utter_request_demo_call
+  - intent: affirm
+  - action: schedule_call_form
+  - active_loop: schedule_call_form
+  - active_loop: null
+  - action: action_submit_schedule_call_form
+
+- story: faq sub-negative path
+  steps:
+  - intent: greet
+  - action: action_greet
+  - intent: affirm
+  - action: action_explain
+  - intent: faq
+  - action: utter_request_demo_call
+  - or:
+    - intent: swear_words
+    - intent: ask_if_robot
+    - intent: speak_to_human
+    - intent: user_busy
+    - intent: not_interested
+  - action: action_negative_intent_router
+
+- story: insist negative path
+  steps:
+  - intent: greet
+  - action: action_greet
+  - intent: affirm
+  - action: action_explain
+  - intent: faq
+  - action: utter_request_demo_call
+  - intent: deny
+  - action: utter_insist_demo_call
+  - or:
+    - intent: deny
+    - intent: swear_words
+    - intent: ask_if_robot
+    - intent: speak_to_human
+    - intent: user_busy
+    - intent: not_interested
+  - action: action_negative_intent_router
+
+- story: not interested positive router
+  steps:
+  - or:
+    - intent: not_interested
+    - intent: user_busy
+  - action: action_negative_intent_router
+  - intent: affirm
+  - action: schedule_call_form
+  - active_loop: schedule_call_form
+  - active_loop: null
+  - action: action_submit_schedule_call_form
+
+- story: not interested negative router
+  steps:
+  - or:
+    - intent: not_interested
+    - intent: user_busy
+  - action: action_negative_intent_router
+  - intent: deny
+  - action: utter_redirection_form_no_response
+
+- story: insist positive path
+  steps:
+  - intent: greet
+  - action: action_greet
+  - intent: affirm
+  - action: action_explain
+  - intent: faq
+  - action: utter_request_demo_call
+  - intent: deny
+  - action: utter_insist_demo_call
+  - intent: affirm
+  - action: schedule_call_form
+  - active_loop: schedule_call_form
+  - active_loop: null
+  - action: action_submit_schedule_call_form

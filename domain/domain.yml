@@ -1,0 +1,116 @@
+version: "3.1"
+
+intents:
+  - greet
+  - affirm
+  - deny
+  - positive_request_email
+  - positive_request_demo
+  - faq
+  - swear_words
+  - ask_if_robot
+  - speak_to_human
+  - user_busy
+  - not_interested
+  - not_the_right_person
+
+entities:
+  - prospect_name
+  - prospect_email
+  - meeting_date
+  - meeting_time
+  - time
+  - date
+
+slots:
+  prospect_name:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: prospect_name
+
+  prospect_email:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: prospect_email
+
+  meeting_date:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: custom
+  
+  meeting_time:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: time
+
+  date_time:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_text
+        not_intent: restart
+        conditions:
+          - requested_slot: date_time
+            active_loop: schedule_call_form
+
+  confirm_date_time:
+    type: bool
+    influence_conversation: false
+    mappings:
+      - type: from_intent
+        intent: affirm
+        value: yes
+        conditions:
+          - requested_slot: confirm_date_time
+            active_loop: schedule_call_form
+      - type: from_intent
+        intent: deny
+        value: no
+        conditions:
+          - requested_slot: confirm_date_time
+            active_loop: schedule_call_form
+
+  redirection_to_prospect:
+    type: bool
+    influence_conversation: false
+    mappings:
+      - type: from_intent
+        intent: affirm
+        value: yes
+      - type: from_intent
+        intent: deny
+        value: no
+
+
+actions:
+- action_greet
+- action_explain
+- action_restart
+- action_default_fallback
+- action_ask_date_time
+- action_ask_confirm_date_time
+- action_submit_schedule_call_form
+- action_negative_intent_router
+- action_ask_redirection_to_prospect
+- action_submit_redirection_form
+
+forms:
+  schedule_call_form:
+    required_slots:
+      - date_time
+      - confirm_date_time
+
+  redirection_form:
+    required_slots:
+      - redirection_to_prospect
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: false

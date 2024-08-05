@@ -1,0 +1,8 @@
+fastapi==0.111.1
+google_api_python_client==2.137.0
+google_auth_oauthlib==1.0.0
+jsonpickle==3.0.4
+openai_whisper==20231117
+protobuf==5.27.2
+Requests==2.32.3
+uvicorn==0.30.3

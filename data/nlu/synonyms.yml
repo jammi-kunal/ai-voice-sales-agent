@@ -1,0 +1,80 @@
+version: "3.1"
+
+nlu:
+  - synonym: arsehole
+    examples: |
+      - arsehole
+      - asshole
+      - arse
+  - synonym: asshat
+    examples: |
+      - asshat
+      - dumbass
+      - idiot
+  - synonym: bitch
+    examples: |
+      - bitch
+      - biatch
+      - witch
+  - synonym: bastard
+    examples: |
+      - bastard
+      - jerk
+      - scumbag
+  - synonym: blowjob
+    examples: |
+      - blowjob
+      - bj
+      - blow job
+  - synonym: bullshit
+    examples: |
+      - bullshit
+      - bs
+      - crap
+  - synonym: cock
+    examples: |
+      - cock
+      - dick
+      - penis
+  - synonym: cocksucker
+    examples: |
+      - cocksucker
+      - sucker
+      - prick
+  - synonym: cunt
+    examples: |
+      - cunt
+      - see you next tuesday
+      - c u next tuesday
+  - synonym: damn
+    examples: |
+      - damn
+      - darn
+      - dang
+  - synonym: fuck
+    examples: |
+      - fuck
+      - f**k
+      - f*ck
+  - synonym: motherfucker
+    examples: |
+      - motherfucker
+      - mf
+      - mfer
+  - synonym: shit
+    examples: |
+      - shit
+      - sh*t
+  - synonym: slut
+    examples: |
+      - slut
+      - tramp
+      - whore
+  - synonym: wanker
+    examples: |
+      - wanker
+      - tosser
+  - synonym: whore
+    examples: |
+      - hoe
+      - prostitute
