@@ -90,9 +90,10 @@ class ActionAskConfirmDateTime(Action):
         logger.error(f"{meeting_time}")
         meeting_date, meeting_time = get_datetime(meeting_time)
         logger.error(f"{meeting_date}, {meeting_time}")
-        dispatcher.utter_message(response="utter_confirm_meeting_details", 
-                                 meeting_date = meeting_date, 
-                                 meeting_time = meeting_time)
+        speakable_text = convert_to_speakable_text(f'{meeting_date} at {meeting_time}')
+        dispatcher.utter_message(response="utter_confirm_meeting_details",
+                                 meeting_date_time=speakable_text
+                                 )
         
         return [SlotSet(MEETING_DATE, meeting_date), SlotSet(MEETING_TIME, meeting_time)]
 
@@ -108,16 +109,16 @@ class ActionSubmitScheduleCallForm(Action):
         meeting_time = tracker.get_slot(MEETING_TIME)
         prospect_name = tracker.get_slot(PROSPECT_NAME)
         prospect_email = tracker.get_slot("prospect_email")
-        dispatcher.utter_message(response="utter_schedule_call_thank_you", 
-                                 meeting_date = meeting_date, 
-                                 meeting_time = meeting_time, 
-                                 prospect_name = prospect_name)
-        time, topic, guests = get_meeting_details(meeting_date, meeting_time, [prospect_email, "jammikunal000@gmail.com"])
-        meet = CreateMeet(guests, time, topic)
-        keys = ['organizer', 'hangoutLink', 'summary', 'start', 'end', 'attendees']
-        details = {key: meet.event_states[key] for key in keys}
-        for key in keys:
-            logger.debug(f"Scheduled Meet Details : {key + ' : ', details[key]}")
+        speakable_text = convert_to_speakable_text(f'{meeting_date} at {meeting_time}')
+        dispatcher.utter_message(response="utter_schedule_call_thank_you",
+                                 meeting_date_time=speakable_text,
+                                 prospect_name=prospect_name)
+        # time, topic, guests = get_meeting_details(meeting_date, meeting_time, [prospect_email, "jammikunal000@gmail.com"])
+        # meet = CreateMeet(guests, time, topic)
+        # keys = ['organizer', 'hangoutLink', 'summary', 'start', 'end', 'attendees']
+        # details = {key: meet.event_states[key] for key in keys}
+        # for key in keys:
+        #     logger.debug(f"Scheduled Meet Details : {key + ' : ', details[key]}")
         return []
 
 

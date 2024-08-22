@@ -42,10 +42,10 @@ responses:
   - text: "Okay! What time and day are you available?"
 
   utter_confirm_meeting_details:
-  - text: "So, from what you have told me, I will schedule a meeting for {meeting_date} at {meeting_time}? Is that okay?"
+  - text: "So, from what you have told me, I will schedule a meeting for {meeting_date_time}? Is that okay?"
 
   utter_schedule_call_thank_you:
-  - text: "Awesome, let me send you an invite for {meeting_date} at {meeting_time}! It's been lovely speaking to you. I have also sent you an email detailing out our features. Bye, {prospect_name}! Have a great day ahead."
+  - text: "Awesome, let me send you an invite for {meeting_date_time}! It's been lovely speaking to you. I have also sent you an email detailing out our features. Bye, {prospect_name}! Have a great day ahead."
 
   utter_swear_words:
   - text: "I apologize if I'm causing any frustration. However, our voice assistants are here to help you manage your tasks more efficiently driving up productivity by 30% and reducing costs by more than 25% Would you like to learn more about their capabilities? I understand that you might be frustrated, but let's keep our conversation respectful. I'm sorry if I'm bothering you. Our voice assistants are designed to make your life easier by automating tasks and providing real-time information. Would you like to know more about how they can benefit your business?"

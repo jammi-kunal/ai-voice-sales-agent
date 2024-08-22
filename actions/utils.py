@@ -16,6 +16,7 @@ import os
 from pathlib import Path
 from .credentials import *
 import base64
+import babel.dates
 
 logger = logging.getLogger(__name__)
 
@@ -91,3 +92,17 @@ def get_meeting_details(meeting_date, meeting_time, emails):
     guests = {email: email for email in emails}
     logger.debug(f"{time, topic, guests}")
     return  time, topic, guests
+
+
+def convert_to_speakable_text(datetime_str, locale='en_US'):
+    # Parse the input datetime string
+    dt = datetime.strptime(datetime_str, '%Y-%m-%d at %H:%M:%S')
+
+    # Format the date and time in a speakable way
+    speakable_date = babel.dates.format_date(dt, format='full', locale=locale)
+    speakable_time = babel.dates.format_time(dt, format='short', locale=locale)
+
+    # Combine date and time into a single speakable string
+    speakable_text = f"{speakable_date} at {speakable_time}"
+
+    return speakable_text

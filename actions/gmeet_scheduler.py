@@ -11,6 +11,11 @@ import logging
 logger = logging.getLogger(__name__)
 
 SCOPES = ["https://www.googleapis.com/auth/calendar"]
+# CREDENTIALS_PATH = "C://Users//jammi//SalesAI//sales-rasa//actions//credentials.json"
+# TOKEN_PATH = "C://Users//jammi//SalesAI//sales-rasa//actions//token.json"
+CREDENTIALS_PATH = "./actions/credentials.json"
+TOKEN_PATH = "./actions/token.json"
+
 
 
 class CreateMeet:
@@ -39,8 +44,8 @@ class CreateMeet:
     @staticmethod
     def _auth():
         creds = None
-        if os.path.exists("token.json"):
-            creds = Credentials.from_authorized_user_file("token.json", SCOPES)
+        if os.path.exists(TOKEN_PATH):
+            creds = Credentials.from_authorized_user_file(TOKEN_PATH, SCOPES)
         # If there are no (valid) credentials available, let the user log in.
         logger.error(creds)
         if not creds or not creds.valid:
@@ -50,17 +55,21 @@ class CreateMeet:
             else:
                 logger.error("Creating and Saving new token.")
                 flow = InstalledAppFlow.from_client_secrets_file(
-                    "C:\\Users\\kunal\\SalesAI\\sales-rasa\\actions\\credentials.json", SCOPES
+                    CREDENTIALS_PATH, SCOPES,
+                    redirect_uri='urn:ietf:wg:oauth:2.0:oob'
                 )
+                logger.error("Accessed credentials.json")
+                # creds = flow.run_local_server(port=0)
                 creds = flow.run_local_server(port=0)
+                logger.error("creds loaded")
                 # Save the credentials for the next run
-                with open("token.json", "w") as token:
+                with open(TOKEN_PATH, "w") as token:
                     token.write(creds.to_json())
-
+                logger.error("Tokens saved")
         service = build("calendar", "v3", credentials=creds)
         return service
-
-
+#
+#
 # print('------------------------------')
 # print('-- Follow YYYY-MM-DD format --')
 # print('------------------------------')
@@ -73,7 +82,7 @@ class CreateMeet:
 # emails = list(
 #     input('Enter the emails of guests separated by 1 space each : ').strip().split())
 # topic = input('Enter the topic of the meeting : ')
-
+#
 # time = {
 #     'start': date + 'T' + start + ':00.000000',
 #     'end': date + 'T' + end + ':00.000000'
